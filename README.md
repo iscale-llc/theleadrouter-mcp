@@ -2,8 +2,8 @@
 
 Connect Claude Code to your iSCALE lead routing platform. This repo provides:
 
-1. **Platform knowledge skill** — teaches Claude Code how iSCALE works (verticals, campaigns, offers, contracts, routing engine, etc.)
-2. **MCP server config** — connects Claude Code to your iSCALE instance via API so it can query leads, manage buyers, pull reports, and more
+1. **Role-specific skills** — teach Claude Code how iSCALE works from your perspective (admin, partner, or buyer)
+2. **MCP server config** — connects Claude Code to your iSCALE instance via API so it can query leads, manage entities, pull reports, and more
 
 ## Quick Start
 
@@ -14,15 +14,57 @@ git clone https://github.com/iscale-llc/lead-router-public.git
 cd lead-router-public
 ```
 
-Then open Claude Code in this directory. It will automatically load the `CLAUDE.md` and the platform setup skill.
+Then open Claude Code in this directory. It automatically loads the `CLAUDE.md` and all three role skills.
 
-### Option 2: Copy the skill into your project
+### Option 2: Copy just your role's skill
 
-Copy the `.claude/skills/platform-setup/` folder into your own project's `.claude/skills/` directory:
+Copy only the skill you need into your project's `.claude/skills/` directory:
 
 ```bash
-cp -r .claude/skills/platform-setup /path/to/your/project/.claude/skills/
+# For admins (full platform setup & management)
+cp -r .claude/skills/admin-guide /path/to/your/project/.claude/skills/
+
+# For partners (lead submission, campaigns, portal)
+cp -r .claude/skills/partner-guide /path/to/your/project/.claude/skills/
+
+# For buyers (contracts, filters, delivery, billing)
+cp -r .claude/skills/buyer-guide /path/to/your/project/.claude/skills/
 ```
+
+## Skills by Role
+
+### Admin Guide (`/admin-guide`)
+
+Full platform configuration and management:
+- Entity hierarchy and setup order (verticals → partners → buyers → campaigns → contracts → offers)
+- Routing engine internals — how the system evaluates contracts
+- Distribution patterns (exclusive, multisell, hybrid, ping-post)
+- Intake centers and delivery configuration
+- Troubleshooting routing failures
+- All admin API endpoints
+
+### Partner Guide (`/partner-guide`)
+
+Lead submission and campaign management:
+- How to submit leads via API (`POST /api/v1/leads/submit`)
+- Posting specs — required fields, sample requests, response formats
+- Common rejection reasons and how to fix them
+- Sessions API for multi-step funnels
+- Co-registration flows
+- Partner portal overview and API endpoints
+- Campaign caps and pricing models
+
+### Buyer Guide (`/buyer-guide`)
+
+Receiving and managing leads:
+- Contract configuration (filters, caps, pricing, schedule)
+- Delivery setup (HTTP POST/GET, email, CRM integration)
+- Dedup settings and how duplicate prevention works
+- Balance, billing, and credit limits
+- Returns and disposition tracking
+- CPA (cost per acquisition) and conversion postbacks
+- Ping-post auction model
+- Buyer portal and API endpoints
 
 ## Setting Up the MCP Server
 
@@ -59,21 +101,7 @@ Close and reopen Claude Code so it picks up the new MCP server config.
 
 Try asking: `"Use search_leads to show me recent leads"`
 
-## What's Included
-
-### Platform Knowledge (`CLAUDE.md` + Skill)
-
-The `CLAUDE.md` file and `.claude/skills/platform-setup/` skill teach Claude Code:
-
-- **Entity hierarchy** — how verticals, partners, buyers, campaigns, offers, contracts, and intake centers relate
-- **Setup order** — what must exist before what (dependency chain)
-- **Field reference** — key fields for each entity with purpose and options
-- **End-to-end walkthrough** — 9-step sequence from creating a vertical through testing a live lead
-- **Distribution patterns** — exclusive, multisell, hybrid, ping-post, DQ/fallback
-- **Routing engine** — the exact evaluation order (status, balance, schedule, filters, caps, dedup, rank, select)
-- **Common gotchas** — vertical mismatch, posting key confusion, cap resets, cascade behaviors
-
-### MCP Server Tools
+## MCP Server Tools
 
 Once connected, Claude Code can use these tools:
 
@@ -104,16 +132,31 @@ Plus 300+ additional auto-generated tools covering the full API surface.
 
 ## Example Prompts
 
-Once set up, try these with Claude Code:
-
+### For Admins
 ```
-"Show me all leads from today that failed routing"
-"What's the balance for buyer Acme Corp?"
-"Set up a new solar campaign for partner SunLeads"
+"Set up a new solar vertical with fields for utilityBill and homeOwner"
+"Create a campaign for partner SunLeads on the solar vertical"
 "Why didn't lead L-12345 route to any buyers?"
+"Show me all contracts that are hitting their daily cap"
 "Pull a revenue report for last week grouped by buyer"
-"List all contracts that are hitting their daily cap"
-"What are the posting instructions for campaign C-789?"
+```
+
+### For Partners
+```
+"Show me the posting spec for campaign C-789"
+"What fields do I need to submit a solar lead?"
+"Why was my last lead rejected?"
+"Show me my leads from today and their statuses"
+"What offers are available for me to enroll in?"
+```
+
+### For Buyers
+```
+"What's my current balance and credit limit?"
+"Show me all leads I received today"
+"Which of my contracts are paused?"
+"Return lead L-12345 — invalid phone number"
+"How many leads am I getting per day this week?"
 ```
 
 ## Help & Documentation
@@ -121,3 +164,4 @@ Once set up, try these with Claude Code:
 - **User Manual:** Available in your iSCALE admin dashboard under Help > User Manual
 - **API Reference:** Help > API Docs
 - **Postman Collection:** Help > Postman Collection
+- **Claude Code tab:** Help > Claude Code (in-app setup instructions)
