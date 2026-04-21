@@ -39,7 +39,7 @@ Your System → POST /api/v1/leads/submit → iSCALE Routing Engine → Buyer(s)
 
 ## Submitting Leads
 
-### Endpoint
+### Standard Submission
 
 ```
 POST /api/v1/leads/submit
@@ -153,6 +153,45 @@ Some campaigns have additional fields beyond the vertical. Check the posting spe
 | TCPA consent required | tcpaConsent must be `true` |
 | Missing TrustedForm certificate | trustedFormCertUrl is required |
 
+### Ping-Post (Real-Time Bidding)
+
+Some campaigns support ping-post, where buyers bid on leads before committing. As a partner, the flow is:
+
+1. **Ping** — submit lead attributes (no PII) to see which buyers match and at what price
+2. **Review bids** — see the best available price
+3. **Post** — commit the lead and deliver PII to the winning buyer(s)
+
+```
+POST /api/v1/leads/ping
+Authorization: Bearer lr_xxx
+
+{
+  "campaignId": "abc-123",
+  "state": "CA",
+  "zipCode": "90210",
+  "homeOwner": true,
+  "utilityBill": 150
+}
+```
+
+Response includes matched contracts and bid prices. Then convert to a sale:
+
+```
+POST /api/v1/leads/post
+Authorization: Bearer lr_xxx
+
+{
+  "pingId": "ping-uuid-from-response",
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane@example.com",
+  "phone": "5551234567",
+  ...
+}
+```
+
+Ping-post lets you check demand and price before submitting PII. Not all campaigns support it — check your campaign's posting spec.
+
 ## Getting Your Posting Spec
 
 The posting spec tells you exactly what fields to send for a specific campaign.
@@ -214,6 +253,30 @@ Go to **People > Leads tab** to see all submitted leads with:
 
 Click a lead to see full details including delivery status.
 
+## Offer Enrollment
+
+Offers define which campaigns feed leads to which buyers. As a partner, you can browse available offers and request enrollment.
+
+### Browsing Offers
+
+Go to **Offers** in the partner portal to see:
+- **Available Offers** — offers you can enroll in (public visibility)
+- **My Campaigns** — your active campaigns and which offers they're linked to
+
+### Requesting Enrollment
+
+1. Find an offer that matches your lead type and volume
+2. Click **Request Enrollment** (or use the API: `request_offer_enrollment`)
+3. Your admin reviews and approves the enrollment
+4. Once approved, a campaign is created and linked to the offer
+
+### Offer Stats
+
+For offers you're enrolled in, you can view performance stats:
+- Lead volume and acceptance rate
+- Revenue generated
+- Top-performing campaigns
+
 ## API Keys
 
 You can access the partner portal API programmatically using API keys.
@@ -248,6 +311,12 @@ Authorization: Bearer lr_your_partner_api_key
 | `/api/partner/settings` | GET/PUT | Your profile |
 | `/api/partner/api-keys` | GET/POST | List/create API keys |
 | `/api/partner/api-keys/{id}` | DELETE | Revoke an API key |
+| `/api/partner/consent/accounts` | GET | Consent verification accounts |
+| `/api/partner/calls` | GET | Calls from your campaigns |
+| `/api/partner/engagements` | GET | Your engagements |
+| `/api/partner/people` | GET | Search your lead contacts |
+| `/api/partner/people/{id}` | GET | Contact detail |
+| `/api/partner/people/{id}/timeline` | GET | 90-day activity timeline |
 
 ## Sessions — Multi-Step Lead Capture
 

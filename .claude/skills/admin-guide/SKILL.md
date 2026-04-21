@@ -337,6 +337,48 @@ When a lead arrives:
 | `GET /api/v1/campaigns/{id}/posting` | Get posting spec |
 | `POST /api/v1/leads/submit` | Submit test lead |
 
+## People (CRM)
+
+The People section is a person-level CRM. Every lead creates or updates a person record (matched by email/phone). People aggregate all activity for a contact across leads, calls, and engagements.
+
+| Feature | Description |
+|---------|-------------|
+| Person timeline | Full activity history (leads, deliveries, calls, dispositions) |
+| Person leads | All leads associated with a person |
+| Person calls | All calls for a person |
+| Person notes | Internal notes attached to a contact |
+| Merge | Merge duplicate person records |
+
+## Sessions (Multi-Step Capture)
+
+Sessions enable multi-step lead capture funnels. Partners collect data across multiple form steps, then submit on the final step.
+
+**Flow:** Create session → PATCH data at each step → Submit on final step (triggers routing)
+
+Sessions expire after 24 hours. Each PATCH merges data (doesn't replace). The lead is only created on final submit.
+
+**Co-Registration (Coreg):** Submit the same contact through multiple campaigns in a single session. Primary lead submits first, then coreg leads are linked via `parentLeadId`.
+
+## Engagements
+
+Engagements track CPA-eligible events across leads. When a contract has CPA configured (cpaAmount + cpaWindowDays), the system monitors for conversion dispositions within the window.
+
+## Consent
+
+Consent verification accounts provide TCPA compliance tracking. Certificates document that consent was collected properly for each lead.
+
+## Posting Log
+
+The posting log records every lead submission and delivery attempt with full request/response payloads. Use it for:
+- Debugging submission failures
+- Verifying delivery payloads
+- Troubleshooting integration issues
+- Auditing partner submissions
+
+## Onboarding
+
+The `setup_partner_onboarding` tool provides a guided multi-step partner onboarding flow — creates the partner, campaign, and links to an offer in one workflow.
+
 ## Gotchas
 
 1. **Vertical mismatch** — Campaign, contract, and offer must all reference the SAME vertical

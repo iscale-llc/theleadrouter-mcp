@@ -403,3 +403,41 @@ Or to decline:
 1. Make a payment to reduce your balance
 2. Ask your admin to increase your creditLimit
 3. Consider enabling autoRecharge to automatically fund your account
+
+## People & Contacts
+
+The People section shows contacts from leads you've received. You can search by name, email, or phone and view a contact's full timeline.
+
+### Contact Timeline
+
+Each contact has a timeline showing:
+- Lead submissions
+- Delivery events
+- Disposition updates
+- Call records
+
+Use `get_person_timeline` or browse People in the buyer portal to see the full history for any contact.
+
+## Engagements
+
+Engagements track CPA-eligible events on your leads. When configured, the system monitors whether leads convert within the CPA window and triggers payouts.
+
+View your engagements in the portal or via `list_buyer_engagements`.
+
+## Calls
+
+If your contracts include call tracking, you can view call records in the Calls section. Each call shows:
+- Duration and recording (if available)
+- Disposition status
+- Which contract/campaign it came through
+
+Use `set_call_disposition` to update call outcomes and `trigger_call_conversion` to trigger CPA payouts on calls.
+
+## Posting Log
+
+The posting log shows every delivery attempt to your endpoints. Use it to:
+- Debug delivery failures (see request/response payloads)
+- Verify leads were delivered correctly
+- Check timing of deliveries
+
+Access via `get_buyer_posting_log` or the Posting Log page in the buyer portal.
