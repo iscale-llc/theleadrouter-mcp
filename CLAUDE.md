@@ -1,10 +1,10 @@
-# iSCALE Lead Routing Platform
+# theLeadRouter — Lead Routing Platform
 
-This file teaches Claude Code about the iSCALE lead routing platform — a B2B lead distribution system that routes leads from partners to buyers through offer-based contracts.
+This file teaches Claude Code about the theLeadRouter platform — a B2B lead distribution system that routes leads from partners to buyers through offer-based contracts.
 
 ## First Time Here?
 
-If the user is new to iSCALE or says anything like "get started", "I'm new", "help me set up", or "walk me through this" — run the `/welcome` skill. It will detect their role (admin, partner, or buyer) and walk them through setup step by step.
+If the user is new to theLeadRouter or says anything like "get started", "I'm new", "help me set up", or "walk me through this" — run the `/welcome` skill. It will detect their role (admin, partner, or buyer) and walk them through setup step by step.
 
 ## Available Skills
 
