@@ -1,0 +1,7096 @@
+{
+  "generatedAt": "2026-03-17T15:24:08.810Z",
+  "specVersion": "2.0.0",
+  "toolCount": 347,
+  "tools": [
+    {
+      "name": "get_current_user",
+      "domain": "auth",
+      "entity": "current",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/auth",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Get current user",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_api_keys",
+      "domain": "auth",
+      "entity": "api",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/auth/api-keys",
+      "tags": [
+        "auth"
+      ],
+      "summary": "List API keys",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_api_key",
+      "domain": "auth",
+      "entity": "api",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/auth/api-keys",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Create API key",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_api_key",
+      "domain": "auth",
+      "entity": "api",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/auth/api-keys/{keyId}",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Get API key",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_api_key",
+      "domain": "auth",
+      "entity": "api",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/auth/api-keys/{keyId}",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Update API key",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "revoke_api_key",
+      "domain": "auth",
+      "entity": "api",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/auth/api-keys/{keyId}",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Revoke API key",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "health_check",
+      "domain": "auth",
+      "entity": "health",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/ping",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Health check",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_verticals",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/verticals",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "List verticals",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_vertical",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/verticals",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "Create vertical",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_vertical",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/verticals/{verticalId}",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "Get vertical",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_vertical",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/verticals/{verticalId}",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "Update vertical",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_vertical",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/verticals/{verticalId}",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "Delete vertical",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_vertical_fields",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/verticals/{verticalId}/fields",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "List vertical fields",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_vertical_custom_fields",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/verticals/{verticalId}/custom-fields",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "List custom fields",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_vertical_custom_field",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/verticals/{verticalId}/custom-fields",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "Create custom field",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_vertical_documents",
+      "domain": "verticals",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/verticals/{verticalId}/documents",
+      "tags": [
+        "verticals"
+      ],
+      "summary": "List vertical documents",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partners",
+      "domain": "partners",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/partners",
+      "tags": [
+        "partners"
+      ],
+      "summary": "List partners",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_partner",
+      "domain": "partners",
+      "entity": "partner",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/partners",
+      "tags": [
+        "partners"
+      ],
+      "summary": "Create partner",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_partner",
+      "domain": "partners",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/partners/{partnerId}",
+      "tags": [
+        "partners"
+      ],
+      "summary": "Get partner",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_partner",
+      "domain": "partners",
+      "entity": "partner",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/partners/{partnerId}",
+      "tags": [
+        "partners"
+      ],
+      "summary": "Update partner",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_partner",
+      "domain": "partners",
+      "entity": "partner",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/partners/{partnerId}",
+      "tags": [
+        "partners"
+      ],
+      "summary": "Delete partner",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_buyers",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/buyers",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "List buyers",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_buyer",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/buyers",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "Create buyer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_buyer",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/buyers/{buyerId}",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "Get buyer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_buyer",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/buyers/{buyerId}",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "Update buyer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_buyer",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/buyers/{buyerId}",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "Delete buyer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "adjust_buyer_balance",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/buyers/{buyerId}/balance",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "Adjust buyer balance",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_buyer_status",
+      "domain": "buyers",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/buyers/{buyerId}/status",
+      "tags": [
+        "buyers"
+      ],
+      "summary": "Update buyer status",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_campaigns",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/campaigns",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "List campaigns",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_campaign",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/campaigns",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Create campaign",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_campaign",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/campaigns/{campaignId}",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Get campaign",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_campaign",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/campaigns/{campaignId}",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Update campaign",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_campaign",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/campaigns/{campaignId}",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Delete campaign",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_campaign_fields",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/campaigns/{campaignId}/fields",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "List campaign fields",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_campaign_posting_instructions",
+      "domain": "campaigns",
+      "entity": "campaign",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/campaigns/{campaignId}/posting",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Get posting instructions",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_contracts",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/contracts",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "List contracts",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_contract",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/contracts",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Create contract",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_contract",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/contracts/{contractId}",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Get contract",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_contract",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/contracts/{contractId}",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Update contract",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_contract",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/contracts/{contractId}",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Delete contract",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "update_contract_status",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/contracts/{contractId}/status",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Update contract status",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "post_contract_event",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/contracts/{contractId}/events",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Post inbound event",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_offers",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offers",
+      "tags": [
+        "offers"
+      ],
+      "summary": "List offers",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_offer",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offers",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Create offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_offer",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offers/{offerId}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Get offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_offer",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/offers/{offerId}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Update offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_offer",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/offers/{offerId}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Delete offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_offer_campaigns",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offers/{offerId}/campaigns",
+      "tags": [
+        "offers"
+      ],
+      "summary": "List offer campaigns",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "link_campaign_to_offer",
+      "domain": "offers",
+      "entity": "link",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offers/{offerId}/campaigns",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Link campaign to offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "unlink_campaign_from_offer",
+      "domain": "offers",
+      "entity": "unlink",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/offers/{offerId}/campaigns/{campaignId}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Unlink campaign from offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_offer_contracts",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offers/{offerId}/contracts",
+      "tags": [
+        "offers"
+      ],
+      "summary": "List offer contracts",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "link_contract_to_offer",
+      "domain": "offers",
+      "entity": "link",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offers/{offerId}/contracts",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Link contract to offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_offer_contract_link",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/offers/{offerId}/contracts/{contractId}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Update offer-contract link",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "unlink_contract_from_offer",
+      "domain": "offers",
+      "entity": "unlink",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/offers/{offerId}/contracts/{contractId}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Unlink contract from offer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "get_offer_cascade_status",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offers/{offerId}/cascade-status",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Get cascade-disabled campaigns",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "cascade_offer_status",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offers/{offerId}/cascade-status",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Cascade offer status to campaigns",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_leads",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/leads",
+      "tags": [
+        "leads"
+      ],
+      "summary": "List leads",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Create lead (admin)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "submit_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/submit",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Submit lead (partner)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "ping_lead",
+      "domain": "leads",
+      "entity": "ping",
+      "isWrite": true,
+      "confirmRequired": false,
+      "method": "POST",
+      "path": "/api/v1/leads/ping",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Ping (check matches)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "post_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/post",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Post lead (after ping)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "bulk_lead_action",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/bulk",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Bulk lead action",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/leads/{leadId}",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Get lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/leads/{leadId}",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Update lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "cherry_pick_lead",
+      "domain": "leads",
+      "entity": "pick",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/{leadId}/cherry-pick",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Cherry-pick lead to contract",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "adjust_lead_payout",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/{leadId}/adjust-payout",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Adjust lead payout",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "distribute_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/{leadId}/distribute",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Re-distribute lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_lead_distributions",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/leads/{leadId}/distributions",
+      "tags": [
+        "leads"
+      ],
+      "summary": "List lead distributions",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_lead_dispositions",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/leads/{leadId}/dispositions",
+      "tags": [
+        "leads"
+      ],
+      "summary": "List lead dispositions",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_lead_notes",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/leads/{leadId}/notes",
+      "tags": [
+        "leads"
+      ],
+      "summary": "List lead notes",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "add_lead_note",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/{leadId}/notes",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Add lead note",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "return_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/{leadId}/return",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Return lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "scrub_lead",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/leads/{leadId}/scrub",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Scrub lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_lead_crm_statuses",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/leads/{leadId}/crm-status",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Get CRM statuses",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_lead_crm_status",
+      "domain": "leads",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/leads/{leadId}/crm-status",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Update CRM status",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_people",
+      "domain": "people",
+      "entity": "people",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people",
+      "tags": [
+        "people"
+      ],
+      "summary": "List people",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_person",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/people",
+      "tags": [
+        "people"
+      ],
+      "summary": "Create person",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_people_by_vertical",
+      "domain": "people",
+      "entity": "people",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/by-vertical",
+      "tags": [
+        "people"
+      ],
+      "summary": "List people by vertical",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_person",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}",
+      "tags": [
+        "people"
+      ],
+      "summary": "Get person",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_person",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/people/{personId}",
+      "tags": [
+        "people"
+      ],
+      "summary": "Update person",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_person_leads",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}/leads",
+      "tags": [
+        "people"
+      ],
+      "summary": "List person's leads",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_person_calls",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}/calls",
+      "tags": [
+        "people"
+      ],
+      "summary": "List person's calls",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_person_sales",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}/sales",
+      "tags": [
+        "people"
+      ],
+      "summary": "List person's sales",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_person_timeline",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}/timeline",
+      "tags": [
+        "people"
+      ],
+      "summary": "Person timeline",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_person_notes",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}/notes",
+      "tags": [
+        "people"
+      ],
+      "summary": "List person notes",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "add_person_note",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/people/{personId}/notes",
+      "tags": [
+        "people"
+      ],
+      "summary": "Add person note",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_person_merge_suggestions",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/people/{personId}/merge",
+      "tags": [
+        "people"
+      ],
+      "summary": "Get merge suggestions",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "merge_person",
+      "domain": "people",
+      "entity": "person",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/people/{personId}/merge",
+      "tags": [
+        "people"
+      ],
+      "summary": "Merge person",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_calls",
+      "domain": "calls",
+      "entity": "call",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/calls",
+      "tags": [
+        "calls"
+      ],
+      "summary": "List calls",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_call",
+      "domain": "calls",
+      "entity": "call",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/calls/{callId}",
+      "tags": [
+        "calls"
+      ],
+      "summary": "Get call detail",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "trigger_call_conversion",
+      "domain": "calls",
+      "entity": "trigger",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/calls/{callId}/conversions",
+      "tags": [
+        "calls"
+      ],
+      "summary": "Trigger call CPA conversion",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "set_call_disposition",
+      "domain": "calls",
+      "entity": "call",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/calls/{callId}/dispositions",
+      "tags": [
+        "calls"
+      ],
+      "summary": "Set call disposition",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_ivr_configs",
+      "domain": "ivr",
+      "entity": "ivr",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/ivr-configs",
+      "tags": [
+        "ivr"
+      ],
+      "summary": "List IVR configs",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_ivr_config",
+      "domain": "ivr",
+      "entity": "ivr",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/ivr-configs",
+      "tags": [
+        "ivr"
+      ],
+      "summary": "Create IVR config",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_ivr_config",
+      "domain": "ivr",
+      "entity": "ivr",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/ivr-configs/{configId}",
+      "tags": [
+        "ivr"
+      ],
+      "summary": "Get IVR config",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_ivr_config",
+      "domain": "ivr",
+      "entity": "ivr",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/ivr-configs/{configId}",
+      "tags": [
+        "ivr"
+      ],
+      "summary": "Update IVR config",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_ivr_config",
+      "domain": "ivr",
+      "entity": "ivr",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/ivr-configs/{configId}",
+      "tags": [
+        "ivr"
+      ],
+      "summary": "Delete IVR config",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_email_templates",
+      "domain": "email-templates",
+      "entity": "email",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/email-templates",
+      "tags": [
+        "email-templates"
+      ],
+      "summary": "List email templates",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_email_template",
+      "domain": "email-templates",
+      "entity": "email",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/email-templates",
+      "tags": [
+        "email-templates"
+      ],
+      "summary": "Create email template",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_email_template",
+      "domain": "email-templates",
+      "entity": "email",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/email-templates/{templateId}",
+      "tags": [
+        "email-templates"
+      ],
+      "summary": "Get email template",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_email_template",
+      "domain": "email-templates",
+      "entity": "email",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/email-templates/{templateId}",
+      "tags": [
+        "email-templates"
+      ],
+      "summary": "Update email template",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_email_template",
+      "domain": "email-templates",
+      "entity": "email",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/email-templates/{templateId}",
+      "tags": [
+        "email-templates"
+      ],
+      "summary": "Delete email template",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "send_test_email",
+      "domain": "email-templates",
+      "entity": "test",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/email-templates/{templateId}/test",
+      "tags": [
+        "email-templates"
+      ],
+      "summary": "Send test email",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_transactions",
+      "domain": "transactions",
+      "entity": "transaction",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/transactions",
+      "tags": [
+        "transactions"
+      ],
+      "summary": "List transactions",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_transaction",
+      "domain": "transactions",
+      "entity": "transaction",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/transactions/{transactionId}",
+      "tags": [
+        "transactions"
+      ],
+      "summary": "Get transaction",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_payouts",
+      "domain": "payouts",
+      "entity": "payout",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/payouts",
+      "tags": [
+        "payouts"
+      ],
+      "summary": "List payouts",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_payout",
+      "domain": "payouts",
+      "entity": "payout",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/payouts",
+      "tags": [
+        "payouts"
+      ],
+      "summary": "Create payout",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_payout",
+      "domain": "payouts",
+      "entity": "payout",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/payouts/{payoutId}",
+      "tags": [
+        "payouts"
+      ],
+      "summary": "Get payout",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_payout",
+      "domain": "payouts",
+      "entity": "payout",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/payouts/{payoutId}",
+      "tags": [
+        "payouts"
+      ],
+      "summary": "Update payout status",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_refunds",
+      "domain": "refunds",
+      "entity": "refund",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/refunds",
+      "tags": [
+        "refunds"
+      ],
+      "summary": "List refunds",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "request_refund",
+      "domain": "refunds",
+      "entity": "refund",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/refunds",
+      "tags": [
+        "refunds"
+      ],
+      "summary": "Request refund",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_refund",
+      "domain": "refunds",
+      "entity": "refund",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/refunds/{refundId}",
+      "tags": [
+        "refunds"
+      ],
+      "summary": "Get refund",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "process_refund",
+      "domain": "refunds",
+      "entity": "refund",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/refunds/{refundId}",
+      "tags": [
+        "refunds"
+      ],
+      "summary": "Process refund",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "trigger_lead_conversion",
+      "domain": "leads",
+      "entity": "trigger",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/conversions",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Trigger CPA conversion",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "submit_disposition",
+      "domain": "disposition-codes",
+      "entity": "disposition",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/dispositions",
+      "tags": [
+        "disposition-codes"
+      ],
+      "summary": "Submit inbound disposition",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_delivery_methods",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/delivery-methods",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "List delivery methods",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_delivery_method",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/delivery-methods",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Create delivery method",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_delivery_method",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/delivery-methods/{methodId}",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Get delivery method",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_delivery_method",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/delivery-methods/{methodId}",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Update delivery method",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_delivery_method",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/delivery-methods/{methodId}",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Delete delivery method",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_delivery_method_contacts",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/delivery-methods/{methodId}/contacts",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "List delivery method contacts",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_delivery_method_tokens",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/delivery-methods/{methodId}/tokens",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "List response tokens",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_delivery_method_token",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/delivery-methods/{methodId}/tokens",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Create response token",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_delivery_method_token",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/delivery-methods/{methodId}/tokens/{tokenId}",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Update response token",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_delivery_method_token",
+      "domain": "delivery-methods",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/delivery-methods/{methodId}/tokens/{tokenId}",
+      "tags": [
+        "delivery-methods"
+      ],
+      "summary": "Delete response token",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_tracking_numbers",
+      "domain": "tracking-numbers",
+      "entity": "tracking",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/tracking-numbers",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "List tracking numbers",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_tracking_number",
+      "domain": "tracking-numbers",
+      "entity": "tracking",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/tracking-numbers",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "Create tracking number",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_tracking_number",
+      "domain": "tracking-numbers",
+      "entity": "tracking",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/tracking-numbers/{numberId}",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "Get tracking number",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_tracking_number",
+      "domain": "tracking-numbers",
+      "entity": "tracking",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/tracking-numbers/{numberId}",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "Update tracking number",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "release_tracking_number",
+      "domain": "tracking-numbers",
+      "entity": "tracking",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/tracking-numbers/{numberId}",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "Release tracking number",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "purchase_tracking_number",
+      "domain": "tracking-numbers",
+      "entity": "purchase",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/tracking-numbers/{numberId}/purchase",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "Purchase tracking number",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "search_available_numbers",
+      "domain": "tracking-numbers",
+      "entity": "available",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "POST",
+      "path": "/api/v1/tracking-numbers/search",
+      "tags": [
+        "tracking-numbers"
+      ],
+      "summary": "Search available numbers",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_offer_integrations",
+      "domain": "integrations",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offer-integrations",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "List offer integrations",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_offer_integration",
+      "domain": "integrations",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offer-integrations",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Create offer integration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_offer_integration",
+      "domain": "integrations",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offer-integrations/{integrationId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Get offer integration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_offer_integration",
+      "domain": "integrations",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/offer-integrations/{integrationId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Update offer integration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_offer_integration",
+      "domain": "integrations",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/offer-integrations/{integrationId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Delete offer integration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_integration_headers",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offer-integrations/{integrationId}/headers",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "List integration headers",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_integration_header",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offer-integrations/{integrationId}/headers",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Add integration header",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_integration_header",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/offer-integrations/{integrationId}/headers/{headerId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Update header",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_integration_header",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/offer-integrations/{integrationId}/headers/{headerId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Delete header",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_integration_parameters",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offer-integrations/{integrationId}/parameters",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "List integration parameters",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_integration_parameter",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offer-integrations/{integrationId}/parameters",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Add integration parameter",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_integration_parameter",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/offer-integrations/{integrationId}/parameters/{parameterId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Update parameter",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_integration_parameter",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/offer-integrations/{integrationId}/parameters/{parameterId}",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Delete parameter",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_integration_responses",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offer-integrations/{integrationId}/responses",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "List response mapping rules",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_integration_response",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offer-integrations/{integrationId}/responses",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Add response mapping rule",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_integration_offers",
+      "domain": "integrations",
+      "entity": "integration",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/offer-integrations/{integrationId}/offers",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "List offers using integration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "test_offer_integration",
+      "domain": "integrations",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/offer-integrations/{integrationId}/test",
+      "tags": [
+        "integrations"
+      ],
+      "summary": "Test integration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "create_session",
+      "domain": "sessions",
+      "entity": "session",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/sessions",
+      "tags": [
+        "sessions"
+      ],
+      "summary": "Create lead session",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_lead_session",
+      "domain": "sessions",
+      "entity": "lead",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/sessions/{sessionKey}",
+      "tags": [
+        "sessions"
+      ],
+      "summary": "Get session",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_lead_session",
+      "domain": "sessions",
+      "entity": "lead",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/sessions/{sessionKey}",
+      "tags": [
+        "sessions"
+      ],
+      "summary": "Update session data",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "submit_session",
+      "domain": "sessions",
+      "entity": "session",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/sessions/{sessionKey}/submit",
+      "tags": [
+        "sessions"
+      ],
+      "summary": "Submit session as lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "create_coreg_lead",
+      "domain": "sessions",
+      "entity": "coreg",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/sessions/{sessionKey}/coreg",
+      "tags": [
+        "sessions"
+      ],
+      "summary": "Create co-registration lead",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_settings",
+      "domain": "settings",
+      "entity": "setting",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get system settings by category",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_settings",
+      "domain": "settings",
+      "entity": "setting",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/settings",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update settings",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_integration_settings",
+      "domain": "settings",
+      "entity": "integration",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/integrations",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get integration settings",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_integration_settings",
+      "domain": "settings",
+      "entity": "integration",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/settings/integrations",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update integration settings",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "upload_logo",
+      "domain": "settings",
+      "entity": "upload",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/settings/logos",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Upload logo",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_domains",
+      "domain": "settings",
+      "entity": "domain",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/domains",
+      "tags": [
+        "settings"
+      ],
+      "summary": "List custom domains",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "add_domain",
+      "domain": "settings",
+      "entity": "domain",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/settings/domains",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Add custom domain",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "remove_domain",
+      "domain": "settings",
+      "entity": "domain",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/settings/domains/{domainId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Remove custom domain",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_system_lists",
+      "domain": "settings",
+      "entity": "system",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/lists",
+      "tags": [
+        "settings"
+      ],
+      "summary": "List system lists",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_system_list",
+      "domain": "settings",
+      "entity": "system",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/settings/lists",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Create system list",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_system_list",
+      "domain": "settings",
+      "entity": "system",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/lists/{listId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get system list",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_system_list",
+      "domain": "settings",
+      "entity": "system",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/settings/lists/{listId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update system list",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_system_list",
+      "domain": "settings",
+      "entity": "system",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/settings/lists/{listId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Delete system list",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_signup_questions",
+      "domain": "settings",
+      "entity": "signup",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/signup-questions",
+      "tags": [
+        "settings"
+      ],
+      "summary": "List signup questions",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_signup_question",
+      "domain": "settings",
+      "entity": "signup",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/settings/signup-questions",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Create signup question",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_signup_question",
+      "domain": "settings",
+      "entity": "signup",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/settings/signup-questions/{questionId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update signup question",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_signup_question",
+      "domain": "settings",
+      "entity": "signup",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/settings/signup-questions/{questionId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Delete signup question",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_smtp_accounts",
+      "domain": "settings",
+      "entity": "smtp",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/smtp",
+      "tags": [
+        "settings"
+      ],
+      "summary": "List SMTP accounts",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_smtp_account",
+      "domain": "settings",
+      "entity": "smtp",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/settings/smtp",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Create SMTP account",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_smtp_account",
+      "domain": "settings",
+      "entity": "smtp",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/smtp/{smtpId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get SMTP account",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_smtp_account",
+      "domain": "settings",
+      "entity": "smtp",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/settings/smtp/{smtpId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update SMTP account",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_smtp_account",
+      "domain": "settings",
+      "entity": "smtp",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/settings/smtp/{smtpId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Delete SMTP account",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_tax_rates",
+      "domain": "settings",
+      "entity": "tax",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/settings/tax-rates",
+      "tags": [
+        "settings"
+      ],
+      "summary": "List tax rates",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_tax_rate",
+      "domain": "settings",
+      "entity": "tax",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/settings/tax-rates",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Create tax rate",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_tax_rate",
+      "domain": "settings",
+      "entity": "tax",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/settings/tax-rates/{taxRateId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update tax rate",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_tax_rate",
+      "domain": "settings",
+      "entity": "tax",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/settings/tax-rates/{taxRateId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Delete tax rate",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_compliance",
+      "domain": "compliance",
+      "entity": "compliance",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/compliance",
+      "tags": [
+        "compliance"
+      ],
+      "summary": "List compliance entries",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_compliance_entry",
+      "domain": "compliance",
+      "entity": "compliance",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/compliance",
+      "tags": [
+        "compliance"
+      ],
+      "summary": "Create compliance entry",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "opt_out",
+      "domain": "compliance",
+      "entity": "opt",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/compliance/opt-out",
+      "tags": [
+        "compliance"
+      ],
+      "summary": "Opt-out (public)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_suppression_entries",
+      "domain": "compliance",
+      "entity": "suppression",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/suppression",
+      "tags": [
+        "compliance"
+      ],
+      "summary": "List suppression entries",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "add_suppression_entry",
+      "domain": "compliance",
+      "entity": "suppression",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/suppression",
+      "tags": [
+        "compliance"
+      ],
+      "summary": "Add suppression entry",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "check_suppression",
+      "domain": "compliance",
+      "entity": "suppression",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/suppression/check",
+      "tags": [
+        "compliance"
+      ],
+      "summary": "Check suppression status",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_blocked_ips",
+      "domain": "blocked-lists",
+      "entity": "blocked",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/blocked-ips",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "List blocked IP ranges",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "block_ip_range",
+      "domain": "blocked-lists",
+      "entity": "block",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/blocked-ips",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "Block IP range",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "unblock_ip_range",
+      "domain": "blocked-lists",
+      "entity": "unblock",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/blocked-ips/{rangeId}",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "Unblock IP range",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_blocked_caller_ids",
+      "domain": "blocked-lists",
+      "entity": "blocked",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/blocked-callerids",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "List blocked caller IDs",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "block_caller_id",
+      "domain": "blocked-lists",
+      "entity": "block",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/blocked-callerids",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "Block caller ID",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "unblock_caller_id",
+      "domain": "blocked-lists",
+      "entity": "unblock",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/blocked-callerids/{callerIdId}",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "Unblock caller ID",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_blocked_referrers",
+      "domain": "blocked-lists",
+      "entity": "blocked",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/blocked-referrers",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "List blocked referrers",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "block_referrer",
+      "domain": "blocked-lists",
+      "entity": "block",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/blocked-referrers",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "Block referrer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "unblock_referrer",
+      "domain": "blocked-lists",
+      "entity": "unblock",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/blocked-referrers/{referrerId}",
+      "tags": [
+        "blocked-lists"
+      ],
+      "summary": "Unblock referrer",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_users",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/users",
+      "tags": [
+        "users"
+      ],
+      "summary": "List users",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_user",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/users",
+      "tags": [
+        "users"
+      ],
+      "summary": "Create user",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_user",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Get user",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_user",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/v1/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Update user",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_user",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Delete user",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "create_contact",
+      "domain": "contacts",
+      "entity": "contact",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/contacts",
+      "tags": [
+        "contacts"
+      ],
+      "summary": "Create contact",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_contact",
+      "domain": "contacts",
+      "entity": "contact",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/contacts/{contactId}",
+      "tags": [
+        "contacts"
+      ],
+      "summary": "Get contact",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_contact",
+      "domain": "contacts",
+      "entity": "contact",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/contacts/{contactId}",
+      "tags": [
+        "contacts"
+      ],
+      "summary": "Update contact",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_contact",
+      "domain": "contacts",
+      "entity": "contact",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/v1/contacts/{contactId}",
+      "tags": [
+        "contacts"
+      ],
+      "summary": "Delete contact",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "set_contact_password",
+      "domain": "contacts",
+      "entity": "contact",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/v1/contacts/{contactId}/password",
+      "tags": [
+        "contacts"
+      ],
+      "summary": "Set contact password",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_report",
+      "domain": "reports",
+      "entity": "report",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/reports",
+      "tags": [
+        "reports"
+      ],
+      "summary": "Get report",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_audit_logs",
+      "domain": "audit-logs",
+      "entity": "audit",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/audit-logs",
+      "tags": [
+        "audit-logs"
+      ],
+      "summary": "List audit logs",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_login_activity",
+      "domain": "audit-logs",
+      "entity": "login",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/login-activity",
+      "tags": [
+        "audit-logs"
+      ],
+      "summary": "List login activity",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "handle_postback",
+      "domain": "leads",
+      "entity": "handle",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/postback",
+      "tags": [
+        "leads"
+      ],
+      "summary": "CPA postback receiver (GET)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "handle_postback_post",
+      "domain": "leads",
+      "entity": "handle",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/postback",
+      "tags": [
+        "leads"
+      ],
+      "summary": "CPA postback receiver (POST)",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "bulk_status_update",
+      "domain": "leads",
+      "entity": "status",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/bulk/status",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Bulk status update",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_setup_token",
+      "domain": "auth",
+      "entity": "setup",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/setup/{token}",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Validate setup token",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "complete_setup",
+      "domain": "auth",
+      "entity": "complete",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/setup/{token}",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Complete setup",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "partner_integration_skill",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/skills/partner-integration",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Partner integration assistant",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "setup_vertical_campaign_skill",
+      "domain": "settings",
+      "entity": "setup",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/skills/setup-vertical-campaign",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Vertical + campaign setup assistant",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "signup",
+      "domain": "auth",
+      "entity": "signup",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/v1/signup",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Self-service tenant signup",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "check_slug_availability",
+      "domain": "auth",
+      "entity": "slug",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/signup/check-slug",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Check slug availability",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_signup_config",
+      "domain": "auth",
+      "entity": "signup",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/v1/signup/config",
+      "tags": [
+        "auth"
+      ],
+      "summary": "Public signup configuration",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_vertical_groups",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/vertical-groups",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "List vertical groups",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_vertical_group",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/vertical-groups",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Create a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_vertical_group",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/vertical-groups/{id}",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Get a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_vertical_group",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/vertical-groups/{id}",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Update a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_vertical_group",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/vertical-groups/{id}",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Delete a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "update_vertical_group_verticals",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/vertical-groups/{id}/verticals",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Update verticals in a group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_vertical_group_dispositions",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/vertical-groups/{id}/dispositions",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "List dispositions for a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_vertical_group_disposition",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/vertical-groups/{id}/dispositions",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Create a disposition for a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_vertical_group_disposition",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/vertical-groups/{id}/dispositions/{dispId}",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Update a vertical group disposition",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_vertical_group_disposition",
+      "domain": "vertical-groups",
+      "entity": "vertical",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/vertical-groups/{id}/dispositions/{dispId}",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Delete a vertical group disposition",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "clone_vertical_group_dispositions",
+      "domain": "vertical-groups",
+      "entity": "clone",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/vertical-groups/{id}/dispositions/clone",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Clone dispositions from another vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "reorder_vertical_group_dispositions",
+      "domain": "vertical-groups",
+      "entity": "reorder",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/vertical-groups/{id}/dispositions/reorder",
+      "tags": [
+        "vertical-groups"
+      ],
+      "summary": "Reorder dispositions in a vertical group",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_intake_centers",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/intake-centers",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "List intake centers",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_intake_center",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/intake-centers",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Create an intake center",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_intake_center",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/intake-centers/{id}",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Get an intake center",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_intake_center",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/intake-centers/{id}",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Update an intake center",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_intake_center",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/intake-centers/{id}",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Deactivate an intake center",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_intake_center_dispositions",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/intake-centers/{id}/dispositions",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "List intake center disposition mappings",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_intake_center_dispositions",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/intake-centers/{id}/dispositions",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Create intake center disposition mappings",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_intake_center_disposition",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/intake-centers/{id}/dispositions",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Update an intake center disposition mapping",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_intake_center_disposition",
+      "domain": "intake-centers",
+      "entity": "intake",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/intake-centers/{id}/dispositions",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Delete an intake center disposition mapping",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "clone_intake_center_dispositions",
+      "domain": "intake-centers",
+      "entity": "clone",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/intake-centers/{id}/dispositions/clone",
+      "tags": [
+        "intake-centers"
+      ],
+      "summary": "Clone IC disposition mappings between vertical groups",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "assign_tracking_number",
+      "domain": "number-pool",
+      "entity": "tracking",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/number-pool/assign",
+      "tags": [
+        "number-pool"
+      ],
+      "summary": "Assign a tracking number to a campaign",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "release_tracking_number_to_pool",
+      "domain": "number-pool",
+      "entity": "tracking",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/number-pool/release",
+      "tags": [
+        "number-pool"
+      ],
+      "summary": "Release a tracking number back to the pool",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "release_tracking_number_to_provider",
+      "domain": "number-pool",
+      "entity": "tracking",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/number-pool/release-to-provider",
+      "tags": [
+        "number-pool"
+      ],
+      "summary": "Release a tracking number back to the telephony provider",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_number_pool_stats",
+      "domain": "number-pool",
+      "entity": "number",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/number-pool/stats",
+      "tags": [
+        "number-pool"
+      ],
+      "summary": "Get number pool statistics",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_telephony_credentials",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/telephony/credentials",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "List telephony credentials",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "upsert_telephony_credential",
+      "domain": "telephony",
+      "entity": "upsert",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/telephony/credentials",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Create or update a telephony credential",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_telephony_credential",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/telephony/credentials/{id}",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Get a telephony credential",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_telephony_credential",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/telephony/credentials/{id}",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Update a telephony credential",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_telephony_credential",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/telephony/credentials/{id}",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Delete a telephony credential",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "update_telephony_inherit",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/telephony/inherit",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Toggle telephony inheritance",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_telephony_status",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/telephony/status",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Get telephony provider status",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_engagements",
+      "domain": "engagements",
+      "entity": "engagement",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/engagements",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "List engagements",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_engagement",
+      "domain": "engagements",
+      "entity": "engagement",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/engagements/{id}",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "Get an engagement",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_consent_accounts",
+      "domain": "consent",
+      "entity": "consent",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/consent/accounts",
+      "tags": [
+        "consent"
+      ],
+      "summary": "List consent accounts",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_consent_account",
+      "domain": "consent",
+      "entity": "consent",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/consent/accounts",
+      "tags": [
+        "consent"
+      ],
+      "summary": "Create a consent account",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_consent_certificates",
+      "domain": "consent",
+      "entity": "consent",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/consent/certificates",
+      "tags": [
+        "consent"
+      ],
+      "summary": "List consent certificates",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_consent_certificate",
+      "domain": "consent",
+      "entity": "consent",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/consent/certificates/{id}",
+      "tags": [
+        "consent"
+      ],
+      "summary": "Get a consent certificate",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_consent_certificate_by_lead",
+      "domain": "consent",
+      "entity": "consent",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/consent/certificates/by-lead/{leadId}",
+      "tags": [
+        "consent"
+      ],
+      "summary": "Get consent certificate by lead ID",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_posting_log",
+      "domain": "posting-log",
+      "entity": "posting",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/posting-log",
+      "tags": [
+        "posting-log"
+      ],
+      "summary": "List posting log entries",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_posting_log_entry",
+      "domain": "posting-log",
+      "entity": "posting",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/posting-log/{id}",
+      "tags": [
+        "posting-log"
+      ],
+      "summary": "Get a posting log entry",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_organizations",
+      "domain": "organizations",
+      "entity": "organization",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/organizations",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "List organizations",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_organization",
+      "domain": "organizations",
+      "entity": "organization",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/organizations",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Create an organization",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_organization",
+      "domain": "organizations",
+      "entity": "organization",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/organizations/{id}",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Get an organization",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_organization",
+      "domain": "organizations",
+      "entity": "organization",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/organizations/{id}",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Update an organization",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_organization",
+      "domain": "organizations",
+      "entity": "organization",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/organizations/{id}",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Deactivate an organization",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "toggle_organization_feature",
+      "domain": "organizations",
+      "entity": "organization",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/admin/organizations/{id}/features",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Toggle an organization feature",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_contract_dispositions",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/contracts/{id}/dispositions",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Get contract disposition overrides",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_contract_disposition",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/contracts/{id}/dispositions",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Create a contract disposition override",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "update_contract_disposition",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/admin/contracts/{id}/dispositions",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Update a contract disposition override",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_contract_disposition",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/contracts/{id}/dispositions",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Delete a contract disposition override",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "populate_contract_dispositions",
+      "domain": "contracts",
+      "entity": "contract",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/contracts/{id}/dispositions/populate",
+      "tags": [
+        "contracts"
+      ],
+      "summary": "Populate contract dispositions from intake center",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "bulk_import_events",
+      "domain": "events",
+      "entity": "import",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/events/bulk",
+      "tags": [
+        "events"
+      ],
+      "summary": "Bulk import engagement events",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "test_delivery",
+      "domain": "delivery-test",
+      "entity": "delivery",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/delivery-test",
+      "tags": [
+        "delivery-test"
+      ],
+      "summary": "Test lead delivery configuration",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_campaign_setup_tokens",
+      "domain": "enrollments",
+      "entity": "campaign",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/campaigns/{id}/setup-token",
+      "tags": [
+        "enrollments"
+      ],
+      "summary": "List setup tokens for a campaign",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_campaign_setup_token",
+      "domain": "enrollments",
+      "entity": "campaign",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/campaigns/{id}/setup-token",
+      "tags": [
+        "enrollments"
+      ],
+      "summary": "Generate a setup token for a campaign",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "revoke_campaign_setup_token",
+      "domain": "enrollments",
+      "entity": "campaign",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/admin/campaigns/{id}/setup-token",
+      "tags": [
+        "enrollments"
+      ],
+      "summary": "Revoke a setup token",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "start_impersonation",
+      "domain": "enrollments",
+      "entity": "start",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/impersonate",
+      "tags": [
+        "enrollments"
+      ],
+      "summary": "Start impersonating a buyer or partner",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "exit_impersonation",
+      "domain": "enrollments",
+      "entity": "impersonation",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/impersonate/exit",
+      "tags": [
+        "enrollments"
+      ],
+      "summary": "Exit impersonation",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "backfill_person_records",
+      "domain": "organizations",
+      "entity": "person",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/people/backfill",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Backfill person records for leads",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_offer_filter_fields",
+      "domain": "engagements",
+      "entity": "offer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/offers/{offerId}/filter-fields",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "Get visible filter fields for an offer",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "transfer_ownership",
+      "domain": "organizations",
+      "entity": "ownership",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/admin/owner/transfer",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Transfer ownership",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_admin_payout",
+      "domain": "engagements",
+      "entity": "admin",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/payouts/{id}",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "Get a payout",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_payout_status",
+      "domain": "engagements",
+      "entity": "payout",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/admin/payouts/{id}",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "Update payout status",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_tenant_features",
+      "domain": "organizations",
+      "entity": "tenant",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/admin/tenant-features",
+      "tags": [
+        "organizations"
+      ],
+      "summary": "Get tenant feature flags",
+      "allowedRoles": [
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_buyer_identity",
+      "domain": "discovery",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/me",
+      "tags": [
+        "discovery"
+      ],
+      "summary": "Get buyer identity and available endpoints",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_buyer_api_keys",
+      "domain": "api-keys",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/api-keys",
+      "tags": [
+        "api-keys"
+      ],
+      "summary": "List buyer's API keys",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_buyer_api_key",
+      "domain": "api-keys",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/buyer/api-keys",
+      "tags": [
+        "api-keys"
+      ],
+      "summary": "Create a buyer API key",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "revoke_buyer_api_key",
+      "domain": "api-keys",
+      "entity": "buyer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/buyer/api-keys/{keyId}",
+      "tags": [
+        "api-keys"
+      ],
+      "summary": "Revoke a buyer API key",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_buyer_people",
+      "domain": "people",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/people",
+      "tags": [
+        "people"
+      ],
+      "summary": "List buyer's people",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_buyer_person",
+      "domain": "people",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/people/{personId}",
+      "tags": [
+        "people"
+      ],
+      "summary": "Get a person detail",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_buyer_engagements",
+      "domain": "engagements",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/engagements",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "List buyer engagements",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_buyer_engagement",
+      "domain": "engagements",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/engagements/{id}",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "Get a buyer engagement",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_people",
+      "domain": "people",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/people",
+      "tags": [
+        "people"
+      ],
+      "summary": "List partner's people",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_person",
+      "domain": "people",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/people/{personId}",
+      "tags": [
+        "people"
+      ],
+      "summary": "Get a person detail",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_engagements",
+      "domain": "engagements",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/engagements",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "List partner's engagements",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_engagement",
+      "domain": "engagements",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/engagements/{id}",
+      "tags": [
+        "engagements"
+      ],
+      "summary": "Get partner engagement detail",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_posting_log",
+      "domain": "posting-log",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/posting-log",
+      "tags": [
+        "posting-log"
+      ],
+      "summary": "List partner's posting log",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_posting_log_entry",
+      "domain": "posting-log",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/posting-log/{id}",
+      "tags": [
+        "posting-log"
+      ],
+      "summary": "Get a partner posting log entry",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_campaigns",
+      "domain": "campaigns",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/campaigns",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "List partner's campaigns",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_campaign_sync",
+      "domain": "campaigns",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/campaigns/sync",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Campaign change detection",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_leads",
+      "domain": "leads",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/leads",
+      "tags": [
+        "leads"
+      ],
+      "summary": "List partner's leads",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_lead",
+      "domain": "leads",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/leads/{id}",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Get a partner lead",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_offers",
+      "domain": "offers",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/offers",
+      "tags": [
+        "offers"
+      ],
+      "summary": "List available offers",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_offer",
+      "domain": "offers",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/offers/{id}",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Get an offer detail",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "request_offer_enrollment",
+      "domain": "offers",
+      "entity": "offer",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/partner/offers/{id}/request",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Request enrollment in an offer",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_partner_payouts",
+      "domain": "payouts",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/payouts",
+      "tags": [
+        "payouts"
+      ],
+      "summary": "Get partner payout data",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_settings",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/settings",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get partner settings",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_partner_settings",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/partner/settings",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update partner settings (password change)",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_partner_me",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/me",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get partner identity",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_api_keys",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/api-keys",
+      "tags": [
+        "settings"
+      ],
+      "summary": "List partner API keys",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_partner_api_key",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/partner/api-keys",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Create partner API key",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "revoke_partner_api_key",
+      "domain": "settings",
+      "entity": "partner",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/partner/api-keys/{keyId}",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Revoke partner API key",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "get_partner_campaign",
+      "domain": "campaigns",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/campaigns/{id}",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Get campaign detail",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "regenerate_spec_token",
+      "domain": "campaigns",
+      "entity": "regenerate",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/partner/campaigns/{id}/spec-token",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Regenerate spec token",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_partner_offer_stats",
+      "domain": "offers",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/offers/{id}/stats",
+      "tags": [
+        "offers"
+      ],
+      "summary": "Get offer stats for partner",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_calls",
+      "domain": "campaigns",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/calls",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "List partner calls",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_partner_person_offers",
+      "domain": "leads",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/people/{personId}/offers",
+      "tags": [
+        "leads"
+      ],
+      "summary": "List offers for a person",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_person_timeline",
+      "domain": "leads",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/people/{personId}/timeline",
+      "tags": [
+        "leads"
+      ],
+      "summary": "Get person timeline",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_public_campaign_specs",
+      "domain": "campaigns",
+      "entity": "public",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/public/campaigns/{id}/specs",
+      "tags": [
+        "campaigns"
+      ],
+      "summary": "Get public posting spec",
+      "allowedRoles": [
+        "admin",
+        "buyer",
+        "partner",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_buyer_posting_log",
+      "domain": "posting-log",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/posting-log",
+      "tags": [
+        "posting-log"
+      ],
+      "summary": "Buyer posting log (redirect)",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_buyer_posting_log_entry",
+      "domain": "posting-log",
+      "entity": "buyer",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/buyer/posting-log/{id}",
+      "tags": [
+        "posting-log"
+      ],
+      "summary": "Buyer posting log entry (redirect)",
+      "allowedRoles": [
+        "buyer",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "get_partner_consent_account",
+      "domain": "consent",
+      "entity": "partner",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/partner/consent/accounts",
+      "tags": [
+        "consent"
+      ],
+      "summary": "Get partner consent account",
+      "allowedRoles": [
+        "partner",
+        "admin",
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "list_tenants",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/tenants",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "List tenants",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/superadmin/tenants",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Create a tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/tenants/{tenantId}",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Get tenant by ID",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/superadmin/tenants/{tenantId}",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Update tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "patch_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/superadmin/tenants/{tenantId}",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Partial update tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/superadmin/tenants/{tenantId}",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Soft-delete tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "impersonate_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/superadmin/tenants/{tenantId}/impersonate",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Impersonate tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_tenant_stats",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/tenants/{tenantId}/stats",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Get tenant stats",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_tenant_features",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/superadmin/tenants/{tenantId}/features",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Update tenant feature flags",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "list_tenant_users",
+      "domain": "users",
+      "entity": "tenant",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/tenants/{tenantId}/users",
+      "tags": [
+        "users"
+      ],
+      "summary": "List tenant users",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_tenant_user",
+      "domain": "users",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/superadmin/tenants/{tenantId}/users",
+      "tags": [
+        "users"
+      ],
+      "summary": "Create user in tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_tenant_user",
+      "domain": "users",
+      "entity": "tenant",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/tenants/{tenantId}/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Get tenant user",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_tenant_user",
+      "domain": "users",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/superadmin/tenants/{tenantId}/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Update tenant user",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "patch_tenant_user",
+      "domain": "users",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/superadmin/tenants/{tenantId}/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Patch tenant user (action-based)",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_tenant_user",
+      "domain": "users",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "DELETE",
+      "path": "/api/superadmin/tenants/{tenantId}/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Soft-delete tenant user",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "destructive": true
+      }
+    },
+    {
+      "name": "list_all_users",
+      "domain": "users",
+      "entity": "all",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/users",
+      "tags": [
+        "users"
+      ],
+      "summary": "List all users",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "patch_user",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/superadmin/users/{userId}",
+      "tags": [
+        "users"
+      ],
+      "summary": "Patch user (action-based)",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_user_login_activity",
+      "domain": "users",
+      "entity": "user",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/users/{userId}/login-activity",
+      "tags": [
+        "users"
+      ],
+      "summary": "Get user login activity",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "create_telephony_credential",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/superadmin/telephony/credentials",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Create or upsert system telephony credential",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "delete_telephony_credential_by_query",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "DELETE",
+      "path": "/api/superadmin/telephony/credentials",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Delete system credential by query param",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true,
+        "destructive": true
+      }
+    },
+    {
+      "name": "patch_telephony_credential",
+      "domain": "telephony",
+      "entity": "telephony",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PATCH",
+      "path": "/api/superadmin/telephony/credentials/{id}",
+      "tags": [
+        "telephony"
+      ],
+      "summary": "Partial update telephony credential",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "get_signup_settings",
+      "domain": "settings",
+      "entity": "signup",
+      "isWrite": false,
+      "confirmRequired": false,
+      "method": "GET",
+      "path": "/api/superadmin/settings/signup",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Get signup settings",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {
+        "readOnly": true
+      }
+    },
+    {
+      "name": "update_signup_settings",
+      "domain": "settings",
+      "entity": "signup",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "PUT",
+      "path": "/api/superadmin/settings/signup",
+      "tags": [
+        "settings"
+      ],
+      "summary": "Update signup settings",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "approve_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/superadmin/tenants/{tenantId}/approve",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Approve pending tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    },
+    {
+      "name": "reject_tenant",
+      "domain": "tenants",
+      "entity": "tenant",
+      "isWrite": true,
+      "confirmRequired": true,
+      "method": "POST",
+      "path": "/api/superadmin/tenants/{tenantId}/reject",
+      "tags": [
+        "tenants"
+      ],
+      "summary": "Reject pending tenant",
+      "allowedRoles": [
+        "superadmin"
+      ],
+      "annotations": {}
+    }
+  ]
+}

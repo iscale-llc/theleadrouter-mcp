@@ -1,0 +1,67 @@
+{
+  "name": "theleadrouter-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for theLeadRouter — connect Claude Code to your lead routing platform",
+  "type": "module",
+  "bin": {
+    "theleadrouter-mcp": "./dist/bin/iscale-mcp.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CLAUDE.md",
+    ".claude"
+  ],
+  "scripts": {
+    "build": "tsc && cp src/tools/generated/catalog.json dist/tools/generated/catalog.json",
+    "dev": "tsx src/bin/iscale-mcp.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate": "tsx scripts/generate-tools.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "claude-code",
+    "lead-routing",
+    "theleadrouter",
+    "iscale",
+    "ai-tools"
+  ],
+  "author": "iSCALE LLC <engineering@iscale.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iscale-llc/theleadrouter-mcp.git"
+  },
+  "homepage": "https://github.com/iscale-llc/theleadrouter-mcp",
+  "bugs": {
+    "url": "https://github.com/iscale-llc/theleadrouter-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "js-yaml": "^4.1.1",
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.25.1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
