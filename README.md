@@ -1,17 +1,21 @@
-# iSCALE Lead Router — Claude Code Integration
+# theLeadRouter MCP — Claude Code Integration
 
-Connect Claude Code to your iSCALE lead routing platform. This repo provides:
+[![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue)](https://builtwithai.com)
 
-1. **Role-specific skills** — teach Claude Code how iSCALE works from your perspective (admin, partner, or buyer)
-2. **MCP server config** — connects Claude Code to your iSCALE instance via API so it can query leads, manage entities, pull reports, and more
+Connect [Claude Code](https://claude.ai/code) to your [theLeadRouter](https://theleadrouter.com) lead routing platform. This repo provides:
+
+1. **Role-specific skills** — teach Claude Code how theLeadRouter works from your perspective (admin, partner, or buyer)
+2. **MCP server** — connects Claude Code to your instance via API so it can query leads, manage entities, pull reports, and more
+
+**Built by [iSCALE](https://builtwithai.com) — AI-powered tools for lead generation at scale.**
 
 ## Quick Start
 
 ### Option 1: Clone this repo (recommended)
 
 ```bash
-git clone https://github.com/iscale-llc/lead-router-public.git
-cd lead-router-public
+git clone https://github.com/iscale-llc/theleadrouter-mcp.git
+cd theleadrouter-mcp
 ```
 
 Then open Claude Code in this directory. It automatically loads the `CLAUDE.md` and all skills.
@@ -70,11 +74,11 @@ Receiving and managing leads:
 
 ## Setting Up the MCP Server
 
-The MCP server lets Claude Code interact with your iSCALE instance directly — querying leads, managing buyers, pulling reports, etc.
+The MCP server lets Claude Code interact with your theLeadRouter instance directly — querying leads, managing buyers, pulling reports, etc.
 
 ### 1. Generate an API key
 
-Go to **Settings > API Keys** in your iSCALE admin dashboard and create an API key. It will start with `lr_`.
+Go to **Settings > API Keys** in your admin dashboard and create an API key. It will start with `lr_`.
 
 ### 2. Add to your Claude Code config
 
@@ -83,9 +87,9 @@ Add the following to your `.mcp.json` file. Replace `lr_your_key_here` with your
 ```json
 {
   "mcpServers": {
-    "iscale": {
+    "theleadrouter": {
       "command": "npx",
-      "args": ["-y", "@iscale/mcp"],
+      "args": ["-y", "theleadrouter-mcp@latest"],
       "env": {
         "ISCALE_API_URL": "https://leads.iscale.com",
         "ISCALE_API_KEY": "lr_your_key_here"
@@ -105,32 +109,20 @@ Try asking: `"Use search_leads to show me recent leads"`
 
 ## MCP Server Tools
 
-Once connected, Claude Code can use these tools:
+Once connected, Claude Code can use 300+ tools across these categories:
 
-| Tool | Description |
-|------|-------------|
-| `search_leads` | Search and filter leads |
-| `get_lead` | Get full lead details |
-| `get_lead_distributions` | View routing waterfall |
-| `list_buyers` | List buyers with filters |
-| `get_buyer_balance` | Check buyer balance and billing |
-| `update_buyer_status` | Activate/pause/disable buyers |
-| `list_partners` | List partners |
-| `list_contracts` | List contracts with filters |
-| `update_contract_status` | Activate/pause contracts |
-| `list_campaigns` | List campaigns |
-| `get_posting_instructions` | Get campaign posting spec |
-| `list_offers` | List offers |
-| `list_verticals` | List verticals (lead categories) |
-| `get_report` | Pull lead/revenue/buyer reports |
-| `list_transactions` | View financial transactions |
-| `search_people` | Search lead contacts |
-| `get_person_timeline` | View person activity history |
-| `check_suppression` | Check suppression lists |
-| `create_contract` | Create a new contract with full config |
-| `setup_partner_onboarding` | Guided multi-step partner onboarding |
-
-Plus 300+ additional auto-generated tools covering the full API surface.
+| Category | Examples |
+|----------|----------|
+| **Leads** | `search_leads`, `get_lead`, `get_lead_distributions`, `submit_lead` |
+| **Buyers** | `list_buyers`, `get_buyer_balance`, `update_buyer_status` |
+| **Partners** | `list_partners`, `get_partner`, `create_partner` |
+| **Contracts** | `list_contracts`, `create_contract`, `update_contract_status` |
+| **Campaigns** | `list_campaigns`, `get_posting_instructions` |
+| **Offers** | `list_offers`, `link_campaign_to_offer` |
+| **Reports** | `get_report`, `list_transactions`, `list_payouts` |
+| **People (CRM)** | `search_people`, `get_person_timeline` |
+| **Calls & IVR** | `list_calls`, `get_call`, `list_tracking_numbers` |
+| **Compliance** | `check_suppression`, `list_audit_logs` |
 
 ## Example Prompts
 
@@ -161,9 +153,14 @@ Plus 300+ additional auto-generated tools covering the full API surface.
 "How many leads am I getting per day this week?"
 ```
 
+## About
+
+theLeadRouter is a B2B lead distribution platform that routes leads from partners to buyers through offer-based contracts. Learn more at [theleadrouter.com](https://theleadrouter.com).
+
+Built by [iSCALE](https://builtwithai.com) — browse all our open-source AI tools at [builtwithai.com/open-source](https://builtwithai.com/open-source).
+
 ## Help & Documentation
 
-- **User Manual:** Available in your iSCALE admin dashboard under Help > User Manual
+- **User Manual:** Available in your admin dashboard under Help > User Manual
 - **API Reference:** Help > API Docs
-- **Postman Collection:** Help > Postman Collection
 - **Claude Code tab:** Help > Claude Code (in-app setup instructions)
