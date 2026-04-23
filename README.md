@@ -99,6 +99,16 @@ Add the following to your `.mcp.json` file. Replace `lr_your_key_here` with your
 }
 ```
 
+#### Optional scope filters
+
+By default all ~300 tools (reads + writes) are registered. You can narrow the set to reduce context usage:
+
+| Env var | Values | Effect |
+|---|---|---|
+| `ISCALE_MCP_SCOPE` | `read` \| `write` \| `all` (default) | Filter by write flag |
+| `ISCALE_MCP_DOMAINS` | comma list, e.g. `verticals,campaigns,buyers` | Restrict to specific domains |
+| `ISCALE_MCP_INCLUDE_UI` | `true` (default `false`) | Include admin-UI navigation tools (only useful inside the in-app agent) |
+
 ### 3. Restart Claude Code
 
 Close and reopen Claude Code so it picks up the new MCP server config.
