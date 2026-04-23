@@ -46,21 +46,32 @@ export function mountRegistryOnServer(
         ? `${tool.description}\n\n⚠️ Write operation — this mutates live data.`
         : tool.description
 
-    server.tool(tool.name, description, shape, async (args: Record<string, unknown>) => {
-      try {
-        const result = await tool.handler(args, auth)
-        const text = typeof result === 'string' ? result : JSON.stringify(result, null, 2)
-        const isError =
-          result !== null &&
-          typeof result === 'object' &&
-          'error' in result &&
-          (result as { error: unknown }).error === true
-        return { content: [{ type: 'text' as const, text }], isError: isError || undefined }
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err)
-        return { content: [{ type: 'text' as const, text: `Error: ${msg}` }], isError: true }
+    const annotations = {
+      readOnlyHint: !tool.metadata.isWrite,
+      destructiveHint: tool.metadata.isWrite && (tool.metadata.method === 'DELETE' || tool.metadata.confirmRequired),
+      idempotentHint: tool.metadata.method === 'GET' || tool.metadata.method === 'PUT' || tool.metadata.method === 'DELETE',
+      openWorldHint: true,
+    }
+
+    server.registerTool(
+      tool.name,
+      { description, inputSchema: shape, annotations },
+      async (args: Record<string, unknown>) => {
+        try {
+          const result = await tool.handler(args, auth)
+          const text = typeof result === 'string' ? result : JSON.stringify(result, null, 2)
+          const isError =
+            result !== null &&
+            typeof result === 'object' &&
+            'error' in result &&
+            (result as { error: unknown }).error === true
+          return { content: [{ type: 'text' as const, text }], isError: isError || undefined }
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err)
+          return { content: [{ type: 'text' as const, text: `Error: ${msg}` }], isError: true }
+        }
       }
-    })
+    )
   }
 
   return tools.length

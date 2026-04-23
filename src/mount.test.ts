@@ -77,6 +77,25 @@ describe('mountRegistryOnServer', () => {
     expect(count).toBe(2)
   })
 
+  it('sets MCP annotations from registry metadata (readOnlyHint/destructiveHint/idempotentHint)', () => {
+    const server = new McpServer({ name: 'test', version: '0.0.0' }) as unknown as {
+      _registeredTools: Record<string, { annotations?: Record<string, boolean> }>
+    }
+    const registry = makeRegistry()
+    const auth = new ApiKeyAuthAdapter('key', 'http://unused')
+    mountRegistryOnServer(server as unknown as McpServer, registry, auth)
+
+    const list = server._registeredTools['list_things']
+    expect(list.annotations?.readOnlyHint).toBe(true)
+    expect(list.annotations?.destructiveHint).toBe(false)
+    expect(list.annotations?.idempotentHint).toBe(true)
+
+    const create = server._registeredTools['create_thing']
+    expect(create.annotations?.readOnlyHint).toBe(false)
+    expect(create.annotations?.destructiveHint).toBe(true)
+    expect(create.annotations?.idempotentHint).toBe(false)
+  })
+
   it('buildRegistry produces the full tool set including writes', () => {
     const reg = buildRegistry()
     const all = reg.getAll()
