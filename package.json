@@ -1,6 +1,6 @@
 {
   "name": "theleadrouter-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for theLeadRouter — connect Claude Code to your lead routing platform",
   "type": "module",
   "bin": {
@@ -21,7 +21,7 @@
     ".claude"
   ],
   "scripts": {
-    "build": "tsc && cp src/tools/generated/catalog.json dist/tools/generated/catalog.json",
+    "build": "rm -rf dist && tsc && cp src/tools/generated/catalog.json dist/tools/generated/catalog.json",
     "dev": "tsx src/bin/iscale-mcp.ts",
     "test": "vitest run",
     "test:watch": "vitest",
