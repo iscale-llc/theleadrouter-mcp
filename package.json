@@ -1,6 +1,6 @@
 {
   "name": "theleadrouter-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for theLeadRouter — connect Claude Code to your lead routing platform",
   "type": "module",
   "bin": {
